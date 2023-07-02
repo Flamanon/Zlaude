@@ -129,7 +129,7 @@ The reason I have made this fork is so you can experiment with tags and make you
 - ### I set up everything correctly, but my front end does not receive a response, even though it seems to have been generated on Slack. What am I doing wrong?
 No idea, maybe check your console and try to figure it out yourself. Chances are, you have streaming enabled, disable it. If nothing works, do a good ol' reinstall.
 - ### This does not deal with repetition as effectively as I thought it would, you liar!!
-This is for people who are fine with experimentation with XML, which in itself is quite a difficult thing to understand for the majority of the people out there. There is no magic prompt, keep experimenting. The concept is to make Claude *think* and do background tasks to enhance its performance. 
+This is for people who are fine with experimentation with XML, which in itself is quite a difficult thing to understand for the majority of the people out there. There is no magic prompt, keep experimenting. The concept is to make Claude *think* and do background tasks to enhance its performance while Zlaude filters out the background tasks from the final response. 
 
 
 
