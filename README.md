@@ -179,4 +179,4 @@ Increased the default config timeout for those having "Response taking too long 
 Added a low-effort interface to edit the filterText.js. This should make it more convenient to modify the filter. 
 
 # Final note
-Thanks PandarusAnon for making this. Credits to borf for the Ping message, Kevin_4850 for making XML the new meta and aRfy for the API key
+Thanks PandarusAnon for making Slaude. Credits to borf for the Ping message, Kevin_4850 for making XML the new meta and aRfy for the API key
