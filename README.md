@@ -178,5 +178,8 @@ Increased the default config timeout for those having "Response taking too long 
 
 Added a low-effort interface to edit the filterText.js. This should make it more convenient to modify the filter. 
 
+## 2023-07-19
+Added a Test Message feature. Press "y" to use the feature and "n" to skip. 
+
 # Final note
 Thanks PandarusAnon for making Slaude. Credits to borf for the Ping message, Kevin_4850 for making XML the new meta and aRfy for the API key
