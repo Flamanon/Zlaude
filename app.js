@@ -5,6 +5,44 @@ import WebSocket from 'ws';
 import config from './config.js';
 import splitMessageInTwo from './utils.js';
 import { filterText } from './filterText.js';
+import readline from 'readline';
+
+// prompt user for input 
+
+function promptUser(query) {
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+
+    return new Promise(resolve => rl.question(query, answer => {
+        rl.close();
+        resolve(answer);
+    }));
+}
+// Function to handle the Test message feature
+async function runTestMessage() {
+    const userResponse = await promptUser("Test Message [Y/N]: ");
+
+    if (userResponse.toLowerCase() === 'y') {
+        try {
+            const promptMsg = "you good?";
+            const threadTs = await postSlackMessage(promptMsg, null, false);
+            console.log(`Test message posted with thread timestamp: ${threadTs}`);
+
+            try {
+                await claudePingEdit(promptMsg, threadTs);
+                console.log("Claude pinged successfully.");
+            } catch (error) {
+                console.error("Please re-check claude's user ID and try again.");
+            }
+        } catch (error) {
+            console.error("Please check the Channel ID or other relevant values.");
+        }
+    } else {
+        console.log("Skipping test message.");
+    }
+}
 
 
 const app = express();
@@ -167,6 +205,7 @@ app.post('/(.*)/chat/completions', async (req, res, next) => {
 
 app.listen(config.PORT, () => {
     console_log(`Zlaude is running at http://localhost:${config.PORT}`);
+    runTestMessage();
     checkConfig();
 });
 
